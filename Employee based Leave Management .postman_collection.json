@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "b2c491a2-bb82-491c-9e80-2909e720e149",
+		"name": "Employee based Leave Management ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38790887"
+	},
+	"item": [
+		{
+			"name": "Create Employee Arun",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"emp_id\": \"EMP1001\",\n  \"emp_name\": \"Arun\",\n  \"mail_id\": \"arun@company.com\",\n  \"emp_role\": \"Developer\",\n  \"emp_dept\": \"IT\",\n  \"date_of_joining\": \"2025-07-01\"\n}"
+				},
+				"url": "http://localhost:8000/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees (Arun Created)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by ID Arun",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees/EMP1001"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Leaves for Arun",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees/EMP1001/leaves"
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Leave for Arun",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/leaves/LEAVE2001?status=Approved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"leaves",
+						"LEAVE2001"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Approved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee Nandini",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"emp_id\": \"EMP1002\",\n  \"emp_name\": \"Nandini\",\n  \"mail_id\": \"nandini@company.com\",\n  \"emp_role\": \"QA Engineer\",\n  \"emp_dept\": \"Testing\",\n  \"date_of_joining\": \"2025-07-02\"\n}"
+				},
+				"url": "http://localhost:8000/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees (Nandini Added)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by ID Nandini",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees/EMP1002"
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Leave for Nandini",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"leave_id\": \"LEAVE2002\",\n  \"employee_id\": \"EMP1002\",\n  \"leave_type\": \"casual\",\n  \"from_date\": \"2025-07-15\",\n  \"to_date\": \"2025-07-16\"\n}"
+				},
+				"url": "http://localhost:8000/employees/EMP1002/leaves"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Leaves for Nandini",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/employees/EMP1002/leaves"
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Leave for Nandini",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/leaves/LEAVE2002?status=Approved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"leaves",
+						"LEAVE2002"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Approved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Leave for Arun",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"leave_id\": \"LEAVE2001\",\n  \"employee_id\": \"EMP1001\",\n  \"leave_type\": \"sick\",\n  \"from_date\": \"2025-07-10\",\n  \"to_date\": \"2025-07-12\"\n}"
+				},
+				"url": "http://localhost:8000/employees/leaves"
+			},
+			"response": []
+		}
+	]
+}
